@@ -1,0 +1,56 @@
+package com.classes.jogo;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import com.classes.Jogador;
+
+public class Game {
+
+	private static Jogador apostador;
+
+	public static void main(String[] args) {
+		criaApostador();
+		mostrarRegras();
+		boasVindas();
+		
+		
+	}
+
+	private static void mostrarRegras() {
+		String regras = null;
+		System.out.println("As regras do jogo: ");
+		
+		try {
+			FileReader rg = new FileReader("regras.txt");
+		} catch (FileNotFoundException e) {
+				e.printStackTrace();
+		}
+		
+		if(regras == null){
+			regras = "Regras não encontradas...\r\nDesculpe estamos resolvendo este problema agora.\r\n\n";
+		}
+		System.out.println(regras);		
+	}
+
+	private static void boasVindas() {
+		if (apostador != null) {
+			System.out.println("Ola "+apostador.getNome()+" Bem vindo ao Jogo de 21.\r\n");
+			System.out.println(apostador.getNome() + " Vamos começar!");
+			
+		}else {
+			System.out.println("Jogador não foi criado com sucesso.....");
+		}
+	}
+	 
+	private static void criaApostador() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Digite seu nome: ");
+		String nome = scn.nextLine();
+		apostador = new Jogador(nome);
+	}
+
+}

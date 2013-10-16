@@ -1,0 +1,29 @@
+package com.classes.jogo;
+
+import java.util.Scanner;
+
+import com.classes.Baralho;
+import com.classes.Jogador;
+
+public class Partida {
+
+	private Jogador apostador;
+	private Jogador banca;
+	private Baralho baralho;
+
+	public Partida(Jogador apaostador) {
+		this.apostador = apaostador;
+		this.banca = new Jogador("Banca");
+		this.baralho = new Baralho();
+	}
+
+	public void iniciaPartida() {
+		baralho.preparaParaNovaPartida();
+		baralho.embaralhar();	
+	}
+
+	public void jogada(Jogador jogador) {
+		jogador.compraCarta(baralho);
+	}
+
+}

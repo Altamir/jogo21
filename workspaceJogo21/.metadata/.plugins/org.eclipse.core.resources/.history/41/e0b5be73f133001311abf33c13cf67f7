@@ -1,0 +1,35 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.classes.Jogador;
+
+public class testJogador {
+
+	private Jogador apostador;
+	private Jogador banca;
+	
+	@Before
+	public void setUp(){
+		apostador = new Jogador("Jogador");
+		banca = new Jogador("Banca");
+	}
+
+	@Test
+	public void testCriarJogadores() {
+		apostador = new Jogador("Jogador");
+		banca = new Jogador("Banca");
+		
+		assertEquals("Jogador", apostador.getNome());
+		assertEquals("Banca", banca.getNome());		
+	}
+	
+	@Test
+	public void testCriarJ() {
+		
+	}
+
+}

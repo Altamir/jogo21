@@ -1,0 +1,30 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.classes.Baralho;
+import com.classes.Jogador;
+import com.test.StringEsperadas;
+
+public class TestJogo {
+
+	private Baralho deck;
+	private Jogador banca;
+	private Jogador apostador;
+
+	@Before
+	public void setUp() {
+		apostador = new Jogador("Apostador");
+		banca = new Jogador("Banca");
+		deck = new Baralho();
+	}
+	
+	@Test
+	public void testBaralhoOrdenado(){
+		assertEquals(StringEsperadas.listaDeCartasOrdenadas(), deck.listarBaralho());
+	}
+
+}

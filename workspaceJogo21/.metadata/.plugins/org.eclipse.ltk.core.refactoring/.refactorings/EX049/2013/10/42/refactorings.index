@@ -1,0 +1,20 @@
+1381711674482	Convert local variable 'deck' to field
+1381755789563	Move compilation unit
+1381756016373	Move compilation unit
+1381756020420	Delete element
+1381757422347	Rename method 'test'
+1381757921673	Move compilation unit
+1381757992522	Rename method 'getListaCartasApostador'
+1381758647965	Convert local variable 'pr' to field
+1381762182137	Extract method 'boasVindas'
+1381764326620	Move file
+1381764381260	Rename resource 'regras'
+1381764501461	Delete element
+1381808473884	Rename local variable 'jagadorNaVez'
+1381809105556	Extract method 'imprimeDadosApostador'
+1381809312696	Rename method 'jogada'
+1381811418612	Extract method 'bancaDeveJogar'
+1381814355994	Convert local variable 'scn' to field
+1381814546286	Extract method 'jogar'
+1381849709108	Rename local variable 'apaostador'
+1381933378492	Move compilation unit

@@ -1,0 +1,18 @@
+package com.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.classes.NAIPE;
+
+public class TestCartas {
+
+	@Test
+	public void test() {
+		Carta carta = new Carta(1,NAIPE.OURO);
+		
+		assertEquals("Dois de Ouro", carta.toString());
+	}
+
+}

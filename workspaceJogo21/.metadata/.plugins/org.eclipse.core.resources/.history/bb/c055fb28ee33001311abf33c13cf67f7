@@ -1,0 +1,13 @@
+package com.classes;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Baralho deck = new Baralho();
+		System.out.println(deck.listarBaralho());
+		
+		deck.embaralhar();
+		System.out.println(deck.listarBaralho());
+	}
+
+}

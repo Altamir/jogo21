@@ -1,0 +1,36 @@
+package com.classes;
+
+import java.util.Scanner;
+
+public class Partida {
+
+	private Jogador apostador;
+	private Jogador banca;
+	private Baralho baralho;
+
+	public Partida(Jogador apaostador) {
+		this.apostador = apaostador;
+		this.banca = new Jogador("Banca");
+		this.baralho = new Baralho();
+	}
+
+	public void iniciaPartida() {
+		baralho.embaralhar();
+		System.out.println("O Apostador esta Jogado:");
+		jogadas(apostador);
+	}
+
+	private void jogadas(Jogador jogador) {
+		
+		
+		for (;;) {
+			jogador.compraCarta(baralho);
+			System.out.println("Cartas do apostador:" + jogador.listarCartas());	
+			System.out.println("Pontuacao do apostador:" + jogador.getPontuacao());	
+			System.out.println("Deseja comprar mais cartas: ");
+			
+		}
+
+	}
+
+}

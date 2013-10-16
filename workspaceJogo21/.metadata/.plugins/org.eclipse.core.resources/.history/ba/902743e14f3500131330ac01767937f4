@@ -1,0 +1,102 @@
+package com.classes.jogo;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import com.classes.Jogador;
+
+public class Game {
+
+	private static Jogador apostador;
+	private static Partida partida;
+
+	public static void main(String[] args) {
+		criaApostador();
+		mostrarRegras();
+		boasVindas();
+		criaPartida();
+		iniciaPartida();
+		jogadaApostador();
+		jogadaBanca();
+
+	}
+
+
+	private static void iniciaPartida() {
+		partida.iniciaPartida();
+	}
+
+	private static void jogadaBanca() {
+		
+	}
+
+	private static void jogadaApostador() {
+		Scanner scn = new Scanner(System.in);
+		String resp = "S";
+
+		partida.jogada(apostador);
+
+		while (resp.equals("S") && partida.getPontuacaoApostador() <= 21) {
+			imprimeDadosApostador();
+			System.out.println("Gostaria de comprar uma carta? S/n ");
+			resp = scn.nextLine();
+			if (resp.equals("S")) {
+				partida.jogada(apostador);
+			}
+		}
+		imprimeDadosApostador();
+		if (partida.getPontuacaoApostador() > 21) {
+			System.out.println("......Voce Estorou.......");
+			System.out.println(".....A Banca Ganhou.......");
+		}
+	}
+
+	private static void imprimeDadosApostador() {
+		System.out.println(apostador.getNome() + " sua pontuação:"
+				+ apostador.getPontuacao());
+		System.out.println("Suas cartas:");
+		System.out.println(partida.listaCartasApostador());
+	}
+
+	private static void criaPartida() {
+		partida = new Partida(apostador);
+	}
+
+	private static void mostrarRegras() {
+		String regras = "";
+		System.out.println("As regras do jogo: ");
+
+		try {
+			FileReader rg = new FileReader("regras.txt");
+			Scanner rgs = new Scanner(rg);
+			while (rgs.hasNextLine()) {
+				regras += rgs.nextLine();
+			}
+		} catch (FileNotFoundException e) {
+			regras = "Regras não encontradas...\r\nDesculpe estamos resolvendo este problema agora.\r\n\n";
+		}
+		System.out.println(regras);
+	}
+
+	private static void boasVindas() {
+		if (apostador != null) {
+			System.out.println("Ola " + apostador.getNome()
+					+ " Bem vindo ao Jogo de 21.\r\n");
+			System.out.println(apostador.getNome() + " Vamos começar!");
+
+		} else {
+			System.out.println("Jogador não foi criado com sucesso.....");
+		}
+	}
+
+	private static void criaApostador() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Digite seu nome: ");
+		String nome = scn.nextLine();
+		apostador = new Jogador(nome);
+	}
+
+}

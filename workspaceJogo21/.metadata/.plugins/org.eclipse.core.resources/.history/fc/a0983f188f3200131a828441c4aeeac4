@@ -1,0 +1,5 @@
+package com.classes;
+
+public enum NAIPE {
+OURO,COPAS,ESPADA,PAUS
+}

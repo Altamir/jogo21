@@ -1,0 +1,82 @@
+package com.classes;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+
+public class Baralho implements JogoDeCartas {
+	private Carta[] cartas;
+	private int qtCartas = 0;
+	private final static Baralho deck = new Baralho();
+
+	private Baralho() {
+		criarCartas();
+	}
+	
+	public static Baralho factoryBaralho() {
+		return deck;
+	}
+	
+	public Carta getCarta(int numCarta) {
+		if (numCarta > qtCartas) {
+			return null;
+		}
+		return cartas[numCarta];
+	}
+
+	private void criarCartas() {
+		cartas = new Carta[51];
+		criaCartasDe(NAIPE.COPAS);
+		criaCartasDe(NAIPE.ESPADAS);
+		criaCartasDe(NAIPE.OURO);
+		criaCartasDe(NAIPE.PAUS);
+	}
+
+	private void criaCartasDe(NAIPE naipe) {
+		for (int valor = 1; valor < 13; valor++) {
+			cartas[qtCartas] = new Carta(valor, naipe);
+			qtCartas++;
+		}
+	}
+
+	@Override
+	public void ordenar() {
+
+	}
+
+	private void ordenaDeck(Carta[] cartas) {
+		Carta elemento;
+		for (int i = 0; i < cartas.length; i++) {
+			elemento = cartas[i];
+			int j;
+			for (j = i - 1; (j <= 0)
+					&& (cartas[j].getValor() > elemento.getValor()); j--) {
+				cartas[j + 1] = cartas[j];
+			}
+			cartas[j + 1] = elemento;
+		}
+		System.out.print(cartas.toString());
+	}
+
+	@Override
+	public void embaralhar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void darCartas() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String listarBaralho() {
+		StringBuffer retorno = new StringBuffer();
+		for (int i = 0; i < cartas.length; i++) {
+			retorno.append(deck.getCarta(i).toString());
+		}
+		return retorno.toString();
+	}
+
+}

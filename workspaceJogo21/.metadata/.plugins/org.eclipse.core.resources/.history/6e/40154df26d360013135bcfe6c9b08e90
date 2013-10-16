@@ -1,0 +1,30 @@
+EX047. Para implementar jogos com cartas, são necessárias classes para representar uma carta individual e também um baralho.
+ Sugira implementações para essas classes considerando:
+
+Classe Cartas - às, 2 a 10, valete, dama, rei, dos naipes copas, espadas, ouros e paus
+
+Classe Baralho - conjunto de 52 cartas (13 cartas de cada naipe), em ordem ou embaralhado
+
+Interface JogoDeCartas que possui os métodos ordenar(), embaralhar(), darCartas(), listarBaralho().
+
+
+Crie as classes Carta e Baralho. A classe Carta deve ter os atributos valor, naipe e usada (boolean) e o método toString() (apenas valor e naipe).
+ A classe Baralho implementa a interface JogodeCartas, deve possuir 52 cartas como atributo, e o método ordenar().
+ O construtor de Baralho deve criar as cartas.
+
+
+EX048. Faça um programa de teste que crie um baralho usando as classes do EX047.
+ O programa deve listar as cartas do baralho logo após a criação deste. Depois deve embaralhar as cartas e imprimi-las novamente.
+
+
+EX049. Utilizando as classes construídas no exercício EX047, implemente um jogo de 21. As regras resumidamente são:
+
+a. existem dois jogadores, apostador e banca;
+
+b. o objetivo é fazer o maior número de pontos;
+
+c. pontuação das cartas: ás equivale a 1; 2 a 10 equivalem a seus próprios valores; as demais cartas (valete, dama e rei) valem 10 pontos;
+
+d. o apostador sempre inicia e pede cartas, deixadas abertas, até que esteja satisfeito com o valor ou estoure (pontuação > 21), situação em que perde;
+
+e. banca joga até igualar ou superar o valor obtido pelo apostador, situação em que ganha (a banca só perde se estourar)

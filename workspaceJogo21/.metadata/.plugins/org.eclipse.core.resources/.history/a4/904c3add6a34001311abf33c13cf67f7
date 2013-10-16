@@ -1,0 +1,25 @@
+package com.classes;
+
+public class Jogador {
+
+	private String nome;
+	private Pontuacao pontuacao;
+
+	public Jogador(String nome) {
+		this.nome = nome;
+		this.pontuacao = new Pontuacao();
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getPontuacao() {	
+		return pontuacao.getPontuacao();
+	}
+	
+	public void setPontuaco(int valor){
+		pontuacao.incremnetaEm(valor);
+	}
+
+}

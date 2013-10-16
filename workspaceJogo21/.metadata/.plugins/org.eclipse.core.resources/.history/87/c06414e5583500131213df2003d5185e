@@ -1,0 +1,137 @@
+package com.classes.jogo;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import com.classes.Jogador;
+
+public class Game {
+
+	private static Jogador apostador;
+	private static Partida partida;
+
+	public static void main(String[] args) {
+		criaApostador();
+		//mostrarRegras();
+		criaPartida();
+		boasVindas();
+		iniciaPartida();
+		jogadaApostador();
+		jogadaBanca();
+
+	}
+
+
+	private static void iniciaPartida() {
+		partida.iniciaPartida();
+	}
+
+	private static void jogadaBanca() {
+		
+		if (partida.getPontuacaoApostador() <= 21) {
+			partida.jogadaBanca();
+			imprimeDadosBanca();
+			while (bancaDeveJogar()) {
+				partida.jogadaBanca();
+				imprimeDadosBanca();				
+			}
+			imprimeResultadoFinal();
+		} 
+		
+	}
+
+
+	private static void imprimeResultadoFinal() {
+		System.out.println("-----------------------------------------------------------------------------");
+		System.out.println("---------                  Resultado Final                    ---------------");
+		System.out.println("-----------------------------------------------------------------------------");
+		System.out.println("-        Apostador                             Banca                        -");
+		System.out.println("-           "+partida.getPontuacaoApostador()+"                                   "
+		+partida.getPontuacaoBanca() +"                         -");
+		System.out.println("-----------------------------------------------------------------------------");
+	}
+
+
+	private static boolean bancaDeveJogar() {
+		return (partida.getPontuacaoBanca() < 22) && (partida.getPontuacaoBanca() < partida.getPontuacaoApostador());
+	}
+
+	private static void imprimeDadosBanca() {
+		System.out.println("A pontuação da Banca: "
+				+ partida.getPontuacaoBanca());
+		System.out.println("Cartas da Banca: ");
+		System.out.println(partida.listaCartasBanca());	
+	}
+
+
+	private static void jogadaApostador() {
+		Scanner scn = new Scanner(System.in);
+		String resp = "S";
+
+		partida.jogadaApostador();
+
+		while (resp.equals("S") && partida.getPontuacaoApostador() <= 21) {
+			imprimeDadosApostador();
+			System.out.println("Gostaria de comprar uma carta? S/n ");
+			resp = scn.nextLine();
+			if (resp.equals("S")) {
+				partida.jogadaApostador();
+			}
+		}
+		scn.close();
+		imprimeDadosApostador();
+		if (partida.getPontuacaoApostador() > 21) {
+			System.out.println("......Voce Estorou.......");
+			System.out.println(".....A Banca Ganhou.......");
+		}
+	}
+
+	private static void imprimeDadosApostador() {
+		System.out.println(partida.getNomeApostador() + " sua pontuação:"
+				+ partida.getPontuacaoApostador());
+		System.out.println("Suas cartas:");
+		System.out.println(partida.listaCartasApostador());
+	}
+
+	private static void criaPartida() {
+		partida = new Partida(apostador);
+	}
+
+	/*private static void mostrarRegras() {
+		String regras = "";
+		System.out.println("As regras do jogo: ");
+
+		try {
+			FileReader rg = new FileReader("regras.txt");
+			Scanner rgs = new Scanner(rg);
+			while (rgs.hasNextLine()) {
+				regras += rgs.nextLine();
+			}
+		} catch (FileNotFoundException e) {
+			regras = "Regras não encontradas...\r\nDesculpe estamos resolvendo este problema agora.\r\n\n";
+		}
+		System.out.println(regras);
+	}*/
+
+	private static void boasVindas() {
+		if (apostador != null) {
+			System.out.println("Ola " + partida.getNomeApostador()
+					+ " Bem vindo ao Jogo de 21.\r\n");
+			System.out.println(partida.getNomeApostador() + " Vamos começar!");
+
+		} else {
+			System.out.println("Jogador não foi criado com sucesso.....");
+		}
+	}
+
+	private static void criaApostador() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Digite seu nome: ");
+		String nome = scn.nextLine();
+		apostador = new Jogador(nome);
+	}
+
+}
