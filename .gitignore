@@ -2,15 +2,15 @@
 ## Eclipse
 #################
 
-*.pydevproject
+.pydevproject
 .project
 .metadata
 bin/
 tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
+.tmp
+.bak
+.swp
+~.nib
 local.properties
 .classpath
 .settings/
@@ -57,7 +57,7 @@ build/
 *_i.c
 *_p.c
 *.ilk
-*.meta
+.meta
 *.obj
 *.pch
 *.pdb
@@ -84,7 +84,7 @@ ipch/
 *.ncb
 *.opensdf
 *.sdf
-*.cachefile
+.cachefile
 
 # Visual Studio profiler
 *.psess
