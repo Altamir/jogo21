@@ -14,7 +14,6 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
-<fullyQualifiedTypeName name="com.test.StringEsperadas"/>
 <fullyQualifiedTypeName name="com.classes.Pontuacao"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.classes.Baralho"/>
@@ -29,4 +28,7 @@
 <fullyQualifiedTypeName name="com.classes.Jogador"/>
 <fullyQualifiedTypeName name="com.classes.NAIPE"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.test.TestCartas"/>
+<fullyQualifiedTypeName name="com.test.TestBaralho"/>
+<fullyQualifiedTypeName name="com.test.StringEsperadas"/>
 </qualifiedTypeNameHistroy>
