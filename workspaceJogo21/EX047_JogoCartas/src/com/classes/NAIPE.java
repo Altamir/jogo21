@@ -1,26 +1,16 @@
 package com.classes;
 
 public enum NAIPE {
-OURO(){
-	public String toString() {
-		return "Ouro";
-	}
-},
-COPAS(){
-	public String toString() {
-		return "Copas";
-	}
-},
-ESPADAS(){
-	public String toString() {
-		return "Espadas";
-	}
-},
-PAUS(){
-	public String toString() {
-		return "Paus";
-	}
-}
+OURO("Ouro"),COPAS("Copas"),ESPADAS("Espadas"),PAUS("Paus");
 
+	public String nome;
+	
+	private NAIPE(String nome) {
+		this.nome = nome;
+	}
+	
+	public String toString() {
+		return nome;
+	}
 
 }

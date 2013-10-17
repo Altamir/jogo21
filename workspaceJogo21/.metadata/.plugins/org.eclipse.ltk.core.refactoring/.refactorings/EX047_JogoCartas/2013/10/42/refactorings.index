@@ -2,3 +2,5 @@
 1381758146234	Move compilation unit
 1381807557624	Rename method 'preparaParaNovaPartida'
 1381933159720	Delete element
+1381988577717	Rename field 'valor'
+1381988587281	Rename local variable 'valor'
