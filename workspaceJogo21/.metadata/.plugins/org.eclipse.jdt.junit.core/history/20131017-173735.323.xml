@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="tests.Suite" project="EX049" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="tests.Suite.AllTests" time="0.01">
+    <testsuite name="tests.testJogador" time="0.007">
+      <testcase name="testPontuacaoJogadorvalor2" classname="tests.testJogador" time="0.006"/>
+      <testcase name="testComprarCarta" classname="tests.testJogador" time="0.0"/>
+      <testcase name="testPontuaçãoInicialJogador" classname="tests.testJogador" time="0.001"/>
+      <testcase name="testCriarJogadores" classname="tests.testJogador" time="0.0"/>
+    </testsuite>
+    <testsuite name="tests.TestJogo" time="0.003">
+      <testcase name="testBaralhoOrdenado" classname="tests.TestJogo" time="0.002"/>
+      <testcase name="testPartidaApostadorComprandoAte21" classname="tests.TestJogo" time="0.001"/>
+    </testsuite>
+  </testsuite>
+</testrun>

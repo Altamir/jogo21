@@ -12,7 +12,7 @@ public class Baralho implements JogoDeCartas {
 	public Baralho() {
 		criarCartas();
 	}
-	
+
 	public Carta getCarta(int numCarta) {
 		return cartas.get(numCarta);
 	}
@@ -98,7 +98,7 @@ public class Baralho implements JogoDeCartas {
 			topo++;
 			cartas.get(topo).usar();
 			return cartas.get(topo);
-		}		
+		}
 		return null;
 
 	}

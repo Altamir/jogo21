@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AllTests" project="EX049" tests="9" started="9" failures="0" errors="0" ignored="0">
+  <testsuite name="tests.Suite.AllTests" time="0.02">
+    <testsuite name="com.test.testJogador" time="0.009">
+      <testcase name="testPontuacaoJogadorvalor2" classname="com.test.testJogador" time="0.008"/>
+      <testcase name="testComprarCarta" classname="com.test.testJogador" time="0.0"/>
+      <testcase name="testPontuaçãoInicialJogador" classname="com.test.testJogador" time="0.001"/>
+      <testcase name="testCriarJogadores" classname="com.test.testJogador" time="0.0"/>
+    </testsuite>
+    <testsuite name="com.test.TestJogo" time="0.008">
+      <testcase name="testBaralhoOrdenado" classname="com.test.TestJogo" time="0.006"/>
+      <testcase name="testPartidaApostadorComprandoAte21" classname="com.test.TestJogo" time="0.001"/>
+    </testsuite>
+    <testsuite name="com.test.TestCartas" time="0.003">
+      <testcase name="testRetornoToString" classname="com.test.TestCartas" time="0.0"/>
+      <testcase name="testEstadoDaCartaUsada" classname="com.test.TestCartas" time="0.001"/>
+      <testcase name="testEstadoDaCartaNaoUsada" classname="com.test.TestCartas" time="0.002"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,15 @@
+package tests.Suite;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+import com.test.TestCartas;
+import com.test.TestJogo;
+import com.test.testJogador;
+
+@RunWith(Suite.class)
+@SuiteClasses({ testJogador.class, TestJogo.class, TestCartas.class})
+public class AllTests {
+
+}
