@@ -1,7 +1,8 @@
 package com.classes;
 
 public enum NAIPE {
-OURO("Ouro"), COPAS("Copas"), ESPADAS("Espadas"), PAUS("Paus");
+	
+	OURO("Ouro"), COPAS("Copas"), ESPADAS("Espadas"), PAUS("Paus");
 
 	public String nome;
 	
