@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Jogador {
 
 	private String nome;
-	private Pontuacao pontuacao;
+	private int pontuacao;
 	private ArrayList<Carta> cartas;
 
 	public Jogador(String nome) {
 		this.nome = nome;
-		this.pontuacao = new Pontuacao();
+		this.pontuacao = 0;
 		this.cartas = new ArrayList<>();
 	}
 
@@ -19,22 +19,19 @@ public class Jogador {
 	}
 
 	public int getPontuacao() {	
-		return pontuacao.getPontuacao();
+		return pontuacao;
 	}
 	
-	private void setPontuaco(int valor){
-		pontuacao.incremnetaEm(valor);
-	}
-
+	
 	public void compraCarta(JogoDeCartas deck) {
 		cartas.add(deck.darCartas());
 		atualizaPontuacao();
 	}
 
 	private void atualizaPontuacao() {
-		pontuacao.limpa();
+		pontuacao = 0;
 		for (Carta carta : cartas) {
-			setPontuaco(carta.getValor());
+			pontuacao += carta.getValor();
 		}		
 	}
 
