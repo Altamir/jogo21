@@ -30,8 +30,7 @@ public class TestJogo {
 		pr.iniciaPartida();
 		while (pr.getPontuacaoApostador() < 21) {
 			pr.jogadaApostador();
-		}
-		
+		}		
 		assertEquals(pr.listaCartasApostador(),21, pr.getPontuacaoApostador());
 	}
 
