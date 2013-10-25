@@ -1,0 +1,38 @@
+package com.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.classes.Baralho;
+import com.classes.Partida;
+import com.test.StringEsperadas;
+
+public class TestJogo {
+
+	private Partida pr;
+
+	@Before
+	public void setUp() {		
+		pr = new Partida("apostador");
+		new Baralho();
+	}
+	
+	@Test
+	public void testBaralhoOrdenado(){
+		assertEquals(StringEsperadas.listaDeCartasOrdenada(), pr.listarBaralho());
+	}
+	
+	@Test
+	public void testPartidaApostadorComprandoAte21(){
+		pr = new Partida("apostador");
+		pr.iniciaPartida();
+		while (pr.getPontuacaoApostador() < 21) {
+			pr.jogadaApostador();
+		}
+		
+		assertEquals(pr.listaCartasApostador(),21, pr.getPontuacaoApostador());
+	}
+
+}

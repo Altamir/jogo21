@@ -26,19 +26,12 @@ public class TestJogo {
 
 	@Test
 	public void testPartidaApostadorComprandoAte21() {
+		pr = new Partida("apostador");
 		pr.iniciaPartida();
 		while (pr.getPontuacaoApostador() < 21) {
 			pr.jogadaApostador();
-		}		
-		assertEquals(msgErro_JogadorEstourou(), 21, pr.getPontuacaoApostador());
-	}
-
-	private String msgErro_JogadorEstourou() {
-		StringBuilder msgErro= new StringBuilder();
-		msgErro.append("\r\nCartas do Jogador:\r\n");
-		msgErro.append(pr.listaCartasApostador());
-		msgErro.append("Jogador Estorou,");
-		return msgErro.toString();
+		}
+		assertEquals(pr.listaCartasApostador(), 21, pr.getPontuacaoApostador());
 	}
 
 }

@@ -35,7 +35,7 @@ public class TestJogo {
 
 	private String msgErro_JogadorEstourou() {
 		StringBuilder msgErro= new StringBuilder();
-		msgErro.append("\r\nCartas do Jogador:\r\n");
+		msgErro.append("Cartas do Jogador:\r\n");
 		msgErro.append(pr.listaCartasApostador());
 		msgErro.append("Jogador Estorou,");
 		return msgErro.toString();

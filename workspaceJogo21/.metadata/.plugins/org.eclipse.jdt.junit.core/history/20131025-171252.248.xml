@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestJogo" project="EX049" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.test.TestJogo" time="0.004">
+    <testcase name="testBaralhoOrdenado" classname="com.test.TestJogo" time="0.003"/>
+    <testcase name="testPartidaApostadorComprandoAte21" classname="com.test.TestJogo" time="0.001"/>
+  </testsuite>
+</testrun>
